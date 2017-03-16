@@ -107,6 +107,28 @@ class DiningHall extends Component {
   }
 }
 
+class Footer extends Component {
+  render() {
+    return (
+      <div className="footer">
+
+        <button className="pivot" active>
+          <p>ALL</p>
+        </button>
+
+        <button className="pivot">
+          <p>SWIPE</p>
+        </button>
+
+        <button className="pivot">
+          <p>PLUS DOLLARS</p>
+        </button>
+
+      </div>
+    );
+  }
+}
+
 class App extends Component {
 
   render() {
@@ -118,6 +140,8 @@ class App extends Component {
 					       return <DiningHall name={diningHall.name} canSwipe={diningHall.canSwipe} />
 				  })}
         </div>
+
+        <Footer />
       </div>
     );
   }
