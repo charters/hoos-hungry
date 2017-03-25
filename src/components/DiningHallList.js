@@ -7,8 +7,15 @@ function getCurrentTime() {
   var d = new Date();
   var hours = d.getHours();
   var minutes = d.getMinutes();
-
+  console.log(hours+(minutes/100));
   return hours+(minutes/100);
+}
+
+function getDayOfWeek() {
+  var d = new Date();
+
+  return 1;
+  //return d.getDay();
 }
 
 class DiningHallList extends Component {
@@ -34,7 +41,10 @@ class DiningHallList extends Component {
     return(
       <div className="dining-hall-list">
         {this.props.data.viewer.allHoursOfOperations.edges.map(function(diningHall){
-          return <DiningHall name={diningHall.node.location.nickname} />
+          if (diningHall.node.location.nickname == null){
+            return <DiningHall name={diningHall.node.location.name} key={diningHall.node.location.id}/>
+          }
+          else return <DiningHall name={diningHall.node.location.nickname} key={diningHall.node.location.id}/>
         })}
       </div>
     );
@@ -43,19 +53,22 @@ class DiningHallList extends Component {
 }
 
 const AllOpenTimes = gql`
-  query AllOpenTimes{
+  query AllOpenTimes($time: Float, $dayOfWeek: Int){
     viewer {
       allHoursOfOperations(where: {
         AND: [
-          {openingHour: {lt: 18.45}},
-          {closingHour: {gt: 18.45}}
+          {openingHour: {lt: $time}},
+          {closingHour: {gt: $time}},
+          {dayOfWeek: {eq: $dayOfWeek}},
         ]
       }) {
         edges {
           node{
             closingHour
             openingHour
+            dayOfWeek
             location {
+              id
               name
               nickname
             }
@@ -66,6 +79,13 @@ const AllOpenTimes = gql`
   }
 `;
 
-const DiningHallListWithData = graphql(AllOpenTimes)(DiningHallList);
+const DiningHallListWithData = graphql(AllOpenTimes, {
+  options: {
+    variables: {
+      time: getCurrentTime(),
+      dayOfWeek: getDayOfWeek(),
+    }
+  }
+})(DiningHallList);
 
 export default DiningHallListWithData;

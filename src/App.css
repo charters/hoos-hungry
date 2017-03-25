@@ -11,6 +11,9 @@ body {
   padding-left: 10px;
   padding-top: 0px;
   font-family: 'Source Sans Pro', sans-serif;
+  display: flex;
+  justify-content: left;
+  align-items: center;
 }
 
 .header > h1 {
@@ -21,6 +24,25 @@ body {
   color: white;
   font-weight: 600;
 
+}
+
+.header > i {
+  font-size: 22px;
+  color:white;
+  display: flex;
+  margin-right: 10px;
+}
+
+.header > h1 > a {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.logo {
+  height: 24px;
+  width: 24px;
+  background-color: none;
 }
 
 .footer {
@@ -35,11 +57,13 @@ body {
 .footer > .pivot {
   vertical-align: middle;
   flex-grow: 1;
+  border-bottom: 5px solid transparent;
 }
 
 .footer > button {
   background:rgba(0,0,0,0);
   border: none;
+
 }
 
 .footer > .pivot:hover {
@@ -57,20 +81,23 @@ body {
 }
 
 .dining-hall-list {
-  margin-top: 65px;
+  margin-top: 70px;
   display:flex;
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
-
+  margin-bottom: 65px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
 }
 
 .dining-hall {
-  width: 98%;
-  margin: 5px 0px 5px 0px;
+  width: 80%;
   background-color: white;
   height: 100px;
   overflow: hidden;
   padding-left: 10px;
+  margin-top: 5px;
 }
 
 .dining-hall > h2 {

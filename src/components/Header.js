@@ -5,11 +5,12 @@ class Header extends Component {
   render() {
     return(
       <div className="header">
-        <h1>{this.props.title}</h1>
+        <i className="fa fa-cutlery"></i>
+        <h1><a href="/">{this.props.title}</a></h1>
       </div>
     );
   }
-  
+
 }
 
 export default Header;
