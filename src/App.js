@@ -1,101 +1,37 @@
+//Libraries
 import React, { Component } from 'react';
+import { gql, graphql } from 'react-apollo';
+
+//Components
+import Header from './components/Header.js';
+
+//Styles
 import './App.css';
 
-var DINING_HALLS = [
-  {
-    name: "OHill",
-    openWindows: [
-      {
-        day: 0,
-        open: 7.00,
-        close: 21.00
-      },
-      {
-        day: 1,
-        open: 7.00,
-        close: 21.00
-      },
-      {
-        day: 2,
-        open: 7.00,
-        close: 21.00
-      },
-      {
-        day: 3,
-        open: 7.00,
-        close: 21.00
-      },
-      {
-        day: 4,
-        open: 7.00,
-        close: 21.00
-      },
-      {
-        day: 5,
-        open: 8.00,
-        close: 21.00
-      },
-      {
-        day: 6,
-        open: 8.00,
-        close: 21.00
+const AllOpenTimes = gql`
+  query AllOpenTimes {
+    viewer {
+      allHoursOfOperations(where: {
+        AND: [
+          {openingHour: {lt: 18.45}},
+          {closingHour: {gt: 18.45}}
+        ]
+      }) {
+        edges {
+          node{
+            closingHour
+            openingHour
+            location {
+              name
+              nickname
+            }
+          }
+        }
       }
-    ],
-    canSwipe: true
-  },
-  {
-    name: "Newcomb",
-    openWindows: [
-      {
-        day: 0,
-        open: 7.00,
-        close: 20.00
-      },
-      {
-        day: 1,
-        open: 7.00,
-        close: 20.00
-      },
-      {
-        day: 2,
-        open: 7.00,
-        close: 20.00
-      },
-      {
-        day: 3,
-        open: 7.00,
-        close: 20.00
-      },
-      {
-        day: 4,
-        open: 7.00,
-        close: 14.25
-      },
-      {
-        day: 5,
-        open: 10.00,
-        close: 14.00
-      },
-      {
-        day: 6,
-        open: 10.00,
-        close: 20.00
-      }
-    ],
-    canSwipe: true
+    }
   }
-];
+`;
 
-
-class Header extends Component {
-  render() {
-    return(
-      <div className="header">
-        <h1>{this.props.title}</h1>
-      </div>
-    );
-  }
-}
 
 class DiningHall extends Component {
   render() {
@@ -148,7 +84,7 @@ class App extends Component {
 
   static defaultProps = {
     title: "HoosHungry",
-    diningHalls: DINING_HALLS
+    diningHalls: {}
   }
 
   static propTypes = {
@@ -181,5 +117,7 @@ class App extends Component {
 //     );
 //   }
 // }
+
+const DiningHallWithData = graphql(AllOpenTimes)(DiningHall);
 
 export default App;

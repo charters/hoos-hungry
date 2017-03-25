@@ -4,30 +4,75 @@ body {
 
 .footer {
 	position: fixed;
-	left: 0px;
 	bottom: 0px;
 	height: 60px;
 	width: 100%;
   display: flex;
+  background-color: navy;
 }
 
 .footer > .pivot {
   vertical-align: middle;
   flex-grow: 1;
+}
 
+.footer > button {
+  background:rgba(0,0,0,0);
+  border: none;
 }
 
 .footer > .pivot:hover {
-  color: #34495D;
-  border-style: solid;
-  border-bottom-width: 3px;
-  border-color: #34495D;
+  background-color: #34495D;
 
 }
 
 .footer > .pivot:active {
   color: #2C3D4F;
-  border-style: solid;
-  border-bottom: 3px;
-  border-color: #2C3D4F;
+  border-bottom: 5px solid white;
+}
+
+.pivot > p {
+  color: white;
+}
+
+.dining-halls {
+  display:flex;
+  flex-direction: column;
+}
+
+.dining-hall {
+  width: 98%;
+  margin: 5px 1% 5px 1%;
+  background-color: white;
+  height: 100px;
+  overflow: hidden;
+}
+
+.dining-hall > h2 {
+  max-width: 150px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* For desktop applications */
+@media only screen and (min-width: 768px) {
+
+  .footer {
+    display:none;
+  }
+
+  .dining-halls {
+    flex-direction: row;
+  }
+
+  .dining-hall {
+    width: 100px;
+    overflow: hidden;
+  }
+
+  .dining-hall > h2 {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
 }
