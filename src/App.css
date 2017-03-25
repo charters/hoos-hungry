@@ -2,13 +2,34 @@ body {
 	background: #F9F5F0;
 }
 
+.header {
+  position: fixed;
+  top: 0px;
+  height: 60px;
+  width: 100%;
+  background-color: #0091EA;
+  padding-left: 10px;
+  padding-top: 0px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.header > h1 {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  font-size: 22px;
+  color: white;
+  font-weight: 600;
+
+}
+
 .footer {
 	position: fixed;
 	bottom: 0px;
 	height: 60px;
 	width: 100%;
   display: flex;
-  background-color: navy;
+  background-color: #0091EA;
 }
 
 .footer > .pivot {
@@ -22,7 +43,7 @@ body {
 }
 
 .footer > .pivot:hover {
-  background-color: #34495D;
+  background-color: #00B0FF;
 
 }
 
@@ -35,17 +56,21 @@ body {
   color: white;
 }
 
-.dining-halls {
+.dining-hall-list {
+  margin-top: 65px;
   display:flex;
   flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+
 }
 
 .dining-hall {
   width: 98%;
-  margin: 5px 1% 5px 1%;
+  margin: 5px 0px 5px 0px;
   background-color: white;
   height: 100px;
   overflow: hidden;
+  padding-left: 10px;
 }
 
 .dining-hall > h2 {
