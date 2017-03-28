@@ -14,8 +14,7 @@ function getCurrentTime() {
 function getDayOfWeek() {
   var d = new Date();
 
-  return 1;
-  //return d.getDay();
+  return d.getDay();
 }
 
 class DiningHallList extends Component {
@@ -61,7 +60,7 @@ const AllOpenTimes = gql`
           {closingHour: {gt: $time}},
           {dayOfWeek: {eq: $dayOfWeek}},
         ]
-      }) {
+      }, orderBy: {field: closingHour, direction: ASC}) {
         edges {
           node{
             closingHour
