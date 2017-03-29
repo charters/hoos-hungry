@@ -120,7 +120,7 @@ body {
 
 
 .dining-hall-list {
-  margin-top: 70px;
+  margin-top: 75px;
   display:flex;
   flex-direction: column;
   font-family: 'Source Sans Pro', sans-serif;
@@ -137,9 +137,10 @@ body {
   overflow: hidden;
   padding-left: 10px;
   padding-right: 10px;
-  margin-top: 5px;
+  margin-bottom: 10px;
   margin-right: 5%;
   margin-left: 5%;
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
 }
 
 .dining-hall > h2 {
@@ -156,13 +157,18 @@ body {
     display:none;
   }
 
-  .dining-halls {
+  .dining-hall-list {
     flex-direction: row;
+    flex-wrap: wrap;
   }
 
   .dining-hall {
-    width: 100px;
+    width: 20%;
+    height: 250px;
     overflow: hidden;
+    margin-right: 1.5%;
+    margin-left: 1.5%;
+    margin-bottom: 10px;
   }
 
   .dining-hall > h2 {
