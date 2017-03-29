@@ -22,7 +22,7 @@ class App extends Component {
   }
 
   static defaultProps = {
-    title: "HoosHungry",
+    title: "hoos hungry",
     diningHalls: {}
   }
 

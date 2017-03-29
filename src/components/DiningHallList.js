@@ -29,7 +29,7 @@ class DiningHallList extends Component {
 
   render() {
     if (this.props.data.loading) {
-      return(<div className="loader"></div>)
+      return(<div className="outer-loader"><div className="loader"></div></div>)
     }
 
     if (this.props.data.error) {
@@ -39,11 +39,11 @@ class DiningHallList extends Component {
 
     return(
       <div className="dining-hall-list">
-        {this.props.data.viewer.allHoursOfOperations.edges.map(function(diningHall){
-          if (diningHall.node.location.nickname == null){
-            return <DiningHall name={diningHall.node.location.name} key={diningHall.node.location.id}/>
+        {this.props.data.viewer.allHoursWindows.edges.map(function(window){
+          if (window.node.diningHall.nickname == null){
+            return <DiningHall name={window.node.diningHall.name} key={window.node.diningHall.shortId}/>
           }
-          else return <DiningHall name={diningHall.node.location.nickname} key={diningHall.node.location.id}/>
+          else return <DiningHall name={window.node.diningHall.nickname} key={window.node.diningHall.shortId}/>
         })}
       </div>
     );
@@ -51,10 +51,11 @@ class DiningHallList extends Component {
 
 }
 
+
 const AllOpenTimes = gql`
   query AllOpenTimes($time: Float, $dayOfWeek: Int){
     viewer {
-      allHoursOfOperations(where: {
+      allHoursWindows(where: {
         AND: [
           {openingHour: {lt: $time}},
           {closingHour: {gt: $time}},
@@ -66,10 +67,9 @@ const AllOpenTimes = gql`
             closingHour
             openingHour
             dayOfWeek
-            location {
-              id
-              name
-              nickname
+            diningHall {
+              name,
+              shortId
             }
           }
         }

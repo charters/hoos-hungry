@@ -2,15 +2,79 @@ body {
 	background: #fafafa;
 }
 
+.outer-loader {
+  margin-top:70%;
+}
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #FF9800;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader {
+  color: #FF9800;
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em;
+    height: 5em;
+  }
+}
+
 .header {
   position: fixed;
   top: 0px;
   height: 60px;
   width: 100%;
-  background-color: #0091EA;
+  background-color: #2196F3;
   padding-left: 10px;
   padding-top: 0px;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Montserrat', sans-serif;
   display: flex;
   justify-content: left;
   align-items: center;
@@ -22,7 +86,7 @@ body {
   align-items: center;
   font-size: 22px;
   color: white;
-  font-weight: 600;
+  font-weight: 300;
 
 }
 
@@ -54,31 +118,6 @@ body {
   background-color: #0091EA;
 }
 
-.footer > .pivot {
-  vertical-align: middle;
-  flex-grow: 1;
-  border-bottom: 5px solid transparent;
-}
-
-.footer > button {
-  background:rgba(0,0,0,0);
-  border: none;
-
-}
-
-.footer > .pivot:hover {
-  background-color: #00B0FF;
-
-}
-
-.footer > .pivot:active {
-  color: #2C3D4F;
-  border-bottom: 5px solid white;
-}
-
-.pivot > p {
-  color: white;
-}
 
 .dining-hall-list {
   margin-top: 70px;
