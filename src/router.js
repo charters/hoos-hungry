@@ -19,7 +19,7 @@ const routes = (
     <Router>
       <App>
         <Route exact={true} path="/" component={DiningHallList} />
-        <Route path="dininghall/:shortId" component={DiningHall} />
+        <Route path="/:shortId" component={DiningHall} />
       </App>
     </Router>
   </ApolloProvider>

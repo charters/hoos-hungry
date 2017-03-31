@@ -41,7 +41,7 @@ class DiningHallList extends Component {
       <div className="dining-hall-list">
         {this.props.data.viewer.allHoursWindows.edges.map(function(window){
           if (window.node.diningHall.nickname == null){
-            return <DiningHallCard name={window.node.diningHall.name} key={window.node.diningHall.shortId}/>
+            return <DiningHallCard name={window.node.diningHall.name} shortId={window.node.diningHall.shortId} key={window.node.diningHall.shortId}/>
           }
           else return <DiningHallCard name={window.node.diningHall.nickname} key={window.node.diningHall.shortId}/>
         })}

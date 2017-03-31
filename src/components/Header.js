@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import {Link} from 'react-router-dom';
 
 class Header extends Component {
 
@@ -6,7 +7,7 @@ class Header extends Component {
     return(
       <div className="header">
         <i className="fa fa-cutlery"></i>
-        <h1><a href="/">{this.props.title}</a></h1>
+        <h1><Link to="/">{this.props.title}</Link></h1>
       </div>
     );
   }

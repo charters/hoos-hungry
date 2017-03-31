@@ -2,6 +2,10 @@ body {
 	background: #fafafa;
 }
 
+a {
+	text-decoration: none;
+}
+
 .outer-loader {
   margin-top:300px;
 }
@@ -80,7 +84,7 @@ body {
   align-items: center;
 }
 
-.header > h1 {
+.header h1 {
   display: flex;
   justify-content: left;
   align-items: center;
@@ -118,6 +122,36 @@ body {
   background-color: #0091EA;
 }
 
+.dining-hall-container {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	padding-top: 75px;
+	justify-content: center;
+  align-items: center;
+}
+
+.dining-hall {
+	width: 90%;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: white;
+	box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+}
+
+.dining-hall > h1 {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	margin-bottom: 20px;
+}
+
+.dining-hall > h2 > a, .dining-hall > h2 {
+	font-family: 'Hind', sans-serif;
+	font-size: 14px;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
 
 .dining-hall-list {
   margin-top: 75px;
@@ -130,7 +164,7 @@ body {
   align-items: center;
 }
 
-.dining-hall {
+.dining-hall-card {
   width: 90%;
   background-color: white;
   height: 100px;
@@ -143,7 +177,8 @@ body {
   box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
 }
 
-.dining-hall > h2 {
+.dining-hall-card > a, .dining-hall-card > a > h2 {
+	color: black;
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
@@ -162,7 +197,7 @@ body {
     flex-wrap: wrap;
   }
 
-  .dining-hall {
+  .dining-hall-card {
     width: 20%;
     height: 250px;
     overflow: hidden;
@@ -171,7 +206,7 @@ body {
     margin-bottom: 10px;
   }
 
-  .dining-hall > h2 {
+  .dining-hall-card > h2 {
     white-space: nowrap;
     text-overflow: ellipsis;
   }
