@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { gql, graphql } from 'react-apollo';
 
-import DiningHall from './DiningHall';
+import DiningHallCard from './DiningHallCard';
 
 function getCurrentTime() {
   var d = new Date();
@@ -41,9 +41,9 @@ class DiningHallList extends Component {
       <div className="dining-hall-list">
         {this.props.data.viewer.allHoursWindows.edges.map(function(window){
           if (window.node.diningHall.nickname == null){
-            return <DiningHall name={window.node.diningHall.name} key={window.node.diningHall.shortId}/>
+            return <DiningHallCard name={window.node.diningHall.name} key={window.node.diningHall.shortId}/>
           }
-          else return <DiningHall name={window.node.diningHall.nickname} key={window.node.diningHall.shortId}/>
+          else return <DiningHallCard name={window.node.diningHall.nickname} key={window.node.diningHall.shortId}/>
         })}
       </div>
     );

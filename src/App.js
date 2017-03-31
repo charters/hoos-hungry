@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 
 //Components
 import Header from './components/Header';
-import DiningHallList from './components/DiningHallList';
 import Footer from './components/Footer';
 
 //Styles
@@ -15,7 +14,7 @@ class App extends Component {
     return (
       <div className="App">
         <Header title={this.props.title} />
-        <DiningHallList />
+        { this.props.children }
         <Footer />
       </div>
     );
