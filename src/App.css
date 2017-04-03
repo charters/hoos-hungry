@@ -153,6 +153,11 @@ a {
 	text-overflow: ellipsis;
 }
 
+.dining-hall > h4 {
+	font-family: 'Hind', sans-serif;
+	font-size: 14px;
+}
+
 .dining-hall-list {
   margin-top: 75px;
   display:flex;
