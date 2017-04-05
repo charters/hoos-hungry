@@ -181,10 +181,18 @@ a {
 	margin: 2px 5px 0px 0px;
 }
 
+.dining-hours-line {
+	color: #BDBDBD;
+}
+
+.dining-hours-line.active {
+	color: #333;
+}
+
 .dining-hours-line > p {
 	font-size: 12px;
 	font-family: 'Hind', sans-serif;
-	color: #333;
+	color: inherit;
 }
 
 .dining-url > a {

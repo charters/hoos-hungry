@@ -32,6 +32,29 @@ function numberToDayOfWeek(dayIndex) {
 
 class DiningHall extends Component {
 
+  renderHoursLine(dayOfWeek, openingHour, closingHour) {
+    // if dayOfWeek is today
+    let d = new Date();
+    let n = d.getDay();
+    n--;
+    if (n === -1){
+      n = 6;
+    }
+    if (dayOfWeek === n) {
+      return (
+        <div className="dining-hours-line active">
+          <p>{ numberToDayOfWeek(dayOfWeek) } : { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
+          </div>
+        )
+    }
+    else {
+      return (
+      <div className="dining-hours-line">
+        <p>{ numberToDayOfWeek(dayOfWeek) } : { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
+        </div>
+      )
+    }
+  }
 
   render() {
     if (this.props.data.loading) {
@@ -51,7 +74,7 @@ class DiningHall extends Component {
             <i className="nc-icon-outline ui-1_calendar-grid-58"></i><h4>Hours</h4>
           </div>
           {this.props.data.viewer.allDiningHalls.edges[0].node.windowsOfOperation.edges.map( (hourWindows) => {
-              return <div className="dining-hours-line"><p>{numberToDayOfWeek(hourWindows.node.dayOfWeek)}: {convertFloatToFriendlyTime(hourWindows.node.openingHour)} - {convertFloatToFriendlyTime(hourWindows.node.closingHour)}</p></div>
+                return this.renderHoursLine(hourWindows.node.dayOfWeek, hourWindows.node.openingHour, hourWindows.node.closingHour);
             })}
           <div className="dining-hall-label">
             <i className="nc-icon-outline ui-2_link-69"></i><h4>Link</h4>
