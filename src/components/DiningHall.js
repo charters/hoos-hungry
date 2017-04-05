@@ -43,7 +43,6 @@ class DiningHall extends Component {
       return (<div>An unexpected error occurred</div>)
     }
 
-    console.log(this);
     return(
       <div className="dining-hall-container">
         <div className="dining-hall">

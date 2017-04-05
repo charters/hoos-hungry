@@ -35,7 +35,6 @@ class DiningHallCard extends Component {
 
   render() {
     let shortId = '/' + this.props.shortId;
-    console.log(this);
     return(
       <div className="dining-hall-card">
         <div className="dining-hall-card-container">
