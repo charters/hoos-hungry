@@ -31,7 +31,7 @@ function convertFloatToFriendlyTime(floatTime) {
     minuteTime = minuteTime.slice(0,2);
   }
 
-  return hourTime + ":" + minuteTime + "0" + " " + meridiem;
+  return hourTime + ":" + minuteTime + (minuteTime.length > 1 ? "" : "0") + " " + meridiem;
 
 }
 
