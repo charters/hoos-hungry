@@ -5,9 +5,18 @@ function convertFloatToFriendlyTime(floatTime) {
 
   let meridiem = "am";
 
-  if (floatTime > 12) {
+  if (floatTime === 12) {
+    meridiem = "pm";
+  }
+
+  if (floatTime > 12 && floatTime < 24) {
       meridiem = "pm";
       floatTime -= 12;
+  }
+
+  if (floatTime === 24){
+    meridiem = "am";
+    floatTime -= 12;
   }
 
   let stringTime = floatTime.toString();

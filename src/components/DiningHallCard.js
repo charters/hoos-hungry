@@ -1,17 +1,22 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
 
-function relativeTimeToClose() {
-
-}
-
 function convertFloatToFriendlyTime(floatTime) {
 
   let meridiem = "am";
 
-  if (floatTime > 12) {
+  if (floatTime == 12) {
+    meridiem = "pm";
+  }
+
+  if (floatTime > 12 && floatTime < 24) {
       meridiem = "pm";
       floatTime -= 12;
+  }
+
+  if (floatTime === 24){
+    meridiem = "am";
+    floatTime -= 12;
   }
 
   let stringTime = floatTime.toString();
@@ -29,6 +34,7 @@ function convertFloatToFriendlyTime(floatTime) {
   return hourTime + ":" + minuteTime + "0" + " " + meridiem;
 
 }
+
 
 class DiningHallCard extends Component {
 
