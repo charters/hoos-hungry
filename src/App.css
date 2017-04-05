@@ -133,10 +133,10 @@ a {
 
 .dining-hall {
 	width: 90%;
-	padding-left: 10px;
-	padding-right: 10px;
+	padding: 0px 10px 10px 10px;
 	background-color: white;
 	box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+	overflow: hidden;
 }
 
 .dining-hall > h1 {
@@ -158,6 +158,42 @@ a {
 	font-size: 14px;
 }
 
+.dining-hall-label {
+	display: inline-flex;
+	justify-content: flex-start;
+	align-items: flex-start;
+	flex-direction: row;
+	margin: 0px 0px 3px 0px;
+}
+
+.dining-hall-label > h4{
+	text-transform: uppercase;
+	font-size: 11px;
+	font-family: 'Hind', sans-serif;
+	color: #2196F3;
+	font-weight: 600;
+	margin: 0px 0px 0px 0px;
+}
+
+.dining-hall-label > i {
+	font-size: 12px;
+	color: #2196F3;
+	margin: 2px 5px 0px 0px;
+}
+
+.dining-hours-line > p {
+	font-size: 12px;
+	font-family: 'Hind', sans-serif;
+	color: #333;
+}
+
+.dining-url > a {
+	font-size: 12px;
+	font-family: 'Hind', sans-serif;
+	text-decoration: none;
+	color: #FF9800;
+}
+
 .dining-hall-list {
   margin-top: 75px;
   display:flex;
@@ -172,7 +208,7 @@ a {
 .dining-hall-card {
   width: 90%;
   background-color: white;
-  height: 100px;
+  height: 90px;
   overflow: hidden;
   padding-left: 10px;
   padding-right: 10px;
@@ -180,14 +216,64 @@ a {
   margin-right: 5%;
   margin-left: 5%;
   box-shadow: 0px 0px 2px rgba(0, 0, 0, .2);
+
+	display: flex;
+	flex-direction: row;
 }
 
-.dining-hall-card > a, .dining-hall-card > a > h2 {
-	color: black;
+.dining-hall-card-title > h2 {
+	color: #333;
   max-width: 100%;
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
+	margin: 10px 0px 5px 0px
+}
+
+.dining-hall-card-container {
+	width: 85%;
+	overflow: hidden;
+}
+
+.dining-hall-card-title {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+.dining-hall-card-arrow {
+	width: 15%;
+	height: 100%;
+}
+
+.dining-hall-card-closing {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	font-size: 16px;
+	color: #bdbdbd;
+}
+
+.dining-hall-card-closing > i {
+	margin: 0px 5px 0px 0px;
+}
+
+.dining-hall-card-closing > p{
+	font-size: 12px;
+	font-family: 'Hind', sans-serif;
+	color: inherit;
+	margin: 12px 0px 10px 0px;
+	vertical-align: middle;
+}
+
+.dining-hall-card-arrow > a {
+	height: 100%;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #2196F3;
+	text-decoration: none;
+	font-size: 24px;
 }
 
 /* For desktop applications */

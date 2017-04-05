@@ -18,8 +18,16 @@ function convertFloatToFriendlyTime(floatTime) {
   let hourTime = stringTime.split('.')[0];
   let minuteTime = stringTime.split('.')[1];
 
+  if (minuteTime.length > 2) {
+    minuteTime = minuteTime.slice(0,2);
+  }
+
   return hourTime + ":" + minuteTime + "0" + " " + meridiem;
 
+}
+
+function numberToDayOfWeek(dayIndex) {
+  return ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][dayIndex];
 }
 
 class DiningHall extends Component {
@@ -40,11 +48,18 @@ class DiningHall extends Component {
       <div className="dining-hall-container">
         <div className="dining-hall">
           <h1>{this.props.data.viewer.allDiningHalls.edges[0].node.name}</h1>
-          <h2>All Hours</h2>
+          <div className="dining-hall-label">
+            <i className="nc-icon-outline ui-1_calendar-grid-58"></i><h4>Hours</h4>
+          </div>
           {this.props.data.viewer.allDiningHalls.edges[0].node.windowsOfOperation.edges.map( (hourWindows) => {
-              return <h4>{convertFloatToFriendlyTime(hourWindows.node.openingHour)} - {convertFloatToFriendlyTime(hourWindows.node.closingHour)}</h4>
+              return <div className="dining-hours-line"><p>{numberToDayOfWeek(hourWindows.node.dayOfWeek)}: {convertFloatToFriendlyTime(hourWindows.node.openingHour)} - {convertFloatToFriendlyTime(hourWindows.node.closingHour)}</p></div>
             })}
-          <h2>Link: <a href={this.props.data.viewer.allDiningHalls.edges[0].node.url} target="_blank">{this.props.data.viewer.allDiningHalls.edges[0].node.url}</a></h2>
+          <div className="dining-hall-label">
+            <i className="nc-icon-outline ui-2_link-69"></i><h4>Link</h4>
+          </div>
+          <div className="dining-url">
+            <a href={this.props.data.viewer.allDiningHalls.edges[0].node.url} target="_blank">{this.props.data.viewer.allDiningHalls.edges[0].node.url}</a>
+          </div>
         </div>
       </div>
     );
