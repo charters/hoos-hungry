@@ -197,13 +197,13 @@ a {
 }
 
 .dining-hours-line > p {
-	font-size: 12px;
+	font-size: 1em;
 	font-family: 'Hind', sans-serif;
 	color: inherit;
 }
 
 .dining-url > a {
-	font-size: 12px;
+	font-size: 1em;
 	font-family: 'Hind', sans-serif !important;
 	text-decoration: none;
 	color: #FF9800;
