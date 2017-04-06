@@ -52,14 +52,14 @@ class DiningHall extends Component {
     if (dayOfWeek === n) {
       return (
         <div className="dining-hours-line active">
-          <p>{ numberToDayOfWeek(dayOfWeek) } : { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
+          <p>{ numberToDayOfWeek(dayOfWeek) }:  { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
           </div>
         )
     }
     else {
       return (
       <div className="dining-hours-line">
-        <p>{ numberToDayOfWeek(dayOfWeek) } : { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
+        <p>{ numberToDayOfWeek(dayOfWeek)}:  { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
         </div>
       )
     }

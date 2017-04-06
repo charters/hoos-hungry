@@ -6,8 +6,10 @@ class Header extends Component {
   render() {
     return(
       <div className="header">
-        <i className="nc-icon-glyph food_pizza-slice"></i>
-        <h1><Link to="/">{this.props.title}</Link></h1>
+        <Link to="/">
+          <i className="nc-icon-glyph food_pizza-slice"></i>
+          <h1>{this.props.title}</h1>
+        </Link>
       </div>
     );
   }
