@@ -5,7 +5,7 @@ function convertFloatToFriendlyTime(floatTime) {
 
   let meridiem = "am";
 
-  if (floatTime == 12) {
+  if (floatTime === 12) {
     meridiem = "pm";
   }
 
@@ -22,7 +22,7 @@ function convertFloatToFriendlyTime(floatTime) {
   let stringTime = floatTime.toString();
 
   // Check for decimal
-  if (stringTime.indexOf(".") == -1 ) return stringTime + ":00 " + meridiem;
+  if (stringTime.indexOf(".") === -1 ) return stringTime + ":00 " + meridiem;
 
   let hourTime = stringTime.split('.')[0];
   let minuteTime = stringTime.split('.')[1];
