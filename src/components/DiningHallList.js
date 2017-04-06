@@ -11,9 +11,13 @@ function getCurrentTime() {
 }
 
 function getDayOfWeek() {
-  var d = new Date();
-
-  return d.getDay();
+  let d = new Date();
+  let n = d.getDay();
+  n--;
+  if (n === -1){
+    n = 6;
+  }
+  return n;
 }
 
 class DiningHallList extends Component {
