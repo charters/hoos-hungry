@@ -79,7 +79,7 @@ a {
   padding-left: 10px;
   padding-top: 0px;
   font-family: 'Montserrat', sans-serif !important;
-	font-weight: bold;
+	font-weight: 700;
 	font-style: normal;
   display: flex;
   justify-content: left;
@@ -144,7 +144,7 @@ a {
 
 .dining-hall > h1 {
 	font-family: 'Source Sans Pro', sans-serif !important;
-	font-weight: bold;
+	font-weight: 700;
 	font-size: 1.5em;
 	margin-top:10px;
 	margin-bottom: 20px;
@@ -203,7 +203,7 @@ a {
 
 .dining-url > a {
 	font-size: 12px;
-	font-family: 'Hind', sans-serif;
+	font-family: 'Hind', sans-serif !important;
 	text-decoration: none;
 	color: #FF9800;
 }
