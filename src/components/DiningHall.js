@@ -80,13 +80,13 @@ class DiningHall extends Component {
         <div className="dining-hall">
           <h1>{this.props.data.viewer.allDiningHalls.edges[0].node.name}</h1>
           <div className="dining-hall-label">
-            <i className="nc-icon-outline ui-1_calendar-grid-58"></i><h4>Hours</h4>
+            <i className="nc-icon-glyph ui-1_calendar-grid-58"></i><h4>Hours</h4>
           </div>
           {this.props.data.viewer.allDiningHalls.edges[0].node.windowsOfOperation.edges.map( (hourWindows) => {
                 return this.renderHoursLine(hourWindows.node.dayOfWeek, hourWindows.node.openingHour, hourWindows.node.closingHour);
             })}
           <div className="dining-hall-label">
-            <i className="nc-icon-outline ui-2_link-69"></i><h4>Link</h4>
+            <i className="nc-icon-glyph ui-2_link-69"></i><h4>Link</h4>
           </div>
           <div className="dining-url">
             <a href={this.props.data.viewer.allDiningHalls.edges[0].node.url} target="_blank">{this.props.data.viewer.allDiningHalls.edges[0].node.url}</a>

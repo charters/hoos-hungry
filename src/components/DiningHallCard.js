@@ -48,7 +48,7 @@ class DiningHallCard extends Component {
           <h2>{this.props.name}</h2>
           </div>
           <div className="dining-hall-card-closing">
-            <i className="nc-icon-outline ui-2_time-clock"></i>
+            <i className="nc-icon-glyph ui-2_time-clock"></i>
             <p> Closes at {convertFloatToFriendlyTime(this.props.closingHour)}</p>
           </div>
         </div>
