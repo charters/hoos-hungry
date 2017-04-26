@@ -8,7 +8,7 @@ import Footer from './components/Footer';
 //Styles
 import './App.css';
 
-class App extends Component {
+export default class App extends Component {
 
   render() {
     return (
@@ -29,5 +29,3 @@ class App extends Component {
     title: React.PropTypes.string.isRequired
   }
 }
-
-export default App;

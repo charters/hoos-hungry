@@ -1,42 +1,9 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-
-function convertFloatToFriendlyTime(floatTime) {
-
-  let meridiem = "am";
-
-  if (floatTime === 12) {
-    meridiem = "pm";
-  }
-
-  if (floatTime > 12 && floatTime < 24) {
-      meridiem = "pm";
-      floatTime -= 12;
-  }
-
-  if (floatTime === 24){
-    meridiem = "am";
-    floatTime -= 12;
-  }
-
-  let stringTime = floatTime.toString();
-
-  // Check for decimal
-  if (stringTime.indexOf(".") === -1 ) return stringTime + ":00 " + meridiem;
-
-  let hourTime = stringTime.split('.')[0];
-  let minuteTime = stringTime.split('.')[1];
-
-  if (minuteTime.length > 2) {
-    minuteTime = minuteTime.slice(0,2);
-  }
-
-  return hourTime + ":" + minuteTime + (minuteTime.length > 1 ? "" : "0") + " " + meridiem;
-
-}
+import { convertFloatToFriendlyTime } from './DiningHall';
 
 
-class DiningHallCard extends Component {
+export default class DiningHallCard extends Component {
 
 
   render() {
@@ -62,5 +29,3 @@ class DiningHallCard extends Component {
   }
 
 }
-
-export default DiningHallCard;
