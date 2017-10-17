@@ -28,7 +28,7 @@ class DiningHallList extends Component {
       error: React.PropTypes.object,
       viewer: React.PropTypes.object,
     }).isRequired,
-  }
+  };
 
   render() {
     if (this.props.data.loading) {

@@ -39,17 +39,20 @@ function numberToDayOfWeek(dayIndex) {
   return ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"][dayIndex];
 }
 
+function dateToNumber( date ) {
+  let n = date.getDay();
+  return (n === 0) ? 6 : n - 1;
+
+}
+
 class DiningHall extends Component {
 
   renderHoursLine(dayOfWeek, openingHour, closingHour) {
     // if dayOfWeek is today
-    let d = new Date();
-    let n = d.getDay();
-    n--;
-    if (n === -1){
-      n = 6;
-    }
-    if (dayOfWeek === n) {
+    let today = new Date();
+    let todayNum = dateToNumber(today);
+
+    if (dayOfWeek === todayNum) {
       return (
         <div className="dining-hours-line active">
           <p>{ numberToDayOfWeek(dayOfWeek) }:  { convertFloatToFriendlyTime(openingHour) } - { convertFloatToFriendlyTime(closingHour) }</p>
